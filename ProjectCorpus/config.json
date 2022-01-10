@@ -1,6 +1,6 @@
 {
-    "witness" : ["simple"],
-    "data" : ["simple"],
-    "test" : ["simple"],
+    "witness" : ["very-simple"],
+    "data" : ["very-simple"],
+    "test" : ["very-simple"],
     "preprocess" : ["log4j-trunk.zip"]
 }
