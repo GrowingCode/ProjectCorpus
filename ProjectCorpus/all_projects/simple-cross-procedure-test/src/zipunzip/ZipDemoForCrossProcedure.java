@@ -86,6 +86,9 @@ public class ZipDemoForCrossProcedure extends JFrame{
 		setSize(330,250);	//设置窗口尺寸
 		setVisible(true);	//设置窗口可视
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);	//关闭窗口时退出程序
+		
+		int ff = ZipFUtil.F(10);
+		System.out.println(ff);
 	}
 	
 //	class SelectFileListener implements ActionListener {	//文件选择的事件处理
