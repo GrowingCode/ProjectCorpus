@@ -1,6 +1,8 @@
 {
+	// used by EnvSetUp.java
     "witness" : ["very-simple"],
     "data" : ["simple-cross-procedure-train"],
     "test" : ["simple-cross-procedure-test"],
+    // used by PreProcessRawProject.java
     "preprocess" : ["x.zip"]
 }
