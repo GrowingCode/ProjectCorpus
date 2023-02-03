@@ -7,46 +7,46 @@ import java.util.*;
 import java.util.zip.*;
 import javax.swing.*;
 
-//ÓÃZIPÑ¹Ëõ¶à¸öÎÄ¼ş
+//ï¿½ï¿½ZIPÑ¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½
 
 public class ZipDemoForCrossProcedure extends JFrame{
-	JFileChooser fileChooser; //ÎÄ¼şÑ¡ÔñÆ÷
-	JList fileList;	//´ıÑ¹ËõµÄÎÄ¼şÁĞ±í
-	ArrayList files;	//ÎÄ¼şÊı¾İ(´ıÑ¹ËõÎÄ¼ş)
-	JButton jbAdd;	//Ôö¼ÓÎÄ¼ş°´Å¥
-	JButton jbDelete; //É¾³ıÎÄ¼ş°´Å¥
-	JButton jbZip; //Ñ¹Ëõ°´Å¥
-	JTextField target; //Ä¿±êÎÄ¼şÎÄ±¾Óò
+	JFileChooser fileChooser;
+	JList fileList;
+	ArrayList files;
+	JButton jbAdd;
+	JButton jbDelete;
+	JButton jbZip;
+	JTextField target;
 
 	public ZipDemoForCrossProcedure(){
-		super("ÓÃZIPÑ¹Ëõ¶à¸öÎÄ¼ş");	//µ÷ÓÃ¸¸Àà¹¹Ôìº¯Êı
-		fileChooser=new JFileChooser();	//ÊµÀı»¯ÎÄ¼şÑ¡ÔñÆ÷
-		files=new ArrayList(); //ÊµÀı»¯ÎÄ¼şÊı¾İVector
-		fileList=new JList(files.toArray()); //ÊµÀı»¯ÒÑÑ¡ÔñÎÄ¼şÁĞ±í
-		jbAdd=new JButton("Ôö¼Ó"); //ÊµÀı»¯°´Å¥×é¼ş
-		jbDelete=new JButton("É¾³ı");
-		jbZip=new JButton("Ñ¹Ëõ");
+		super("asas");
+		fileChooser=new JFileChooser();
+		files=new ArrayList();
+		fileList=new JList(files.toArray());
+		jbAdd=new JButton("asas");
+		jbDelete=new JButton("asas");
+		jbZip=new JButton("asas");
 		target=new JTextField(18);
-		JPanel panel=new JPanel(); //ÊµÀı»¯Ãæ°å,ÓÃÓÚÈİÄÉ°´Å¥
-		panel.add(jbAdd);	//Ôö¼Ó×é¼şµ½Ãæ°åÉÏ
+		JPanel panel=new JPanel();
+		panel.add(jbAdd);
 		panel.add(jbDelete);
 		panel.add(jbZip);
 		JPanel panel2=new JPanel();
-		panel2.add(new JLabel("Ä¿±êÎÄ¼ş"));
+		panel2.add(new JLabel("asas"));
 		panel2.add(target);
 		JScrollPane jsp=new JScrollPane(fileList);
-		Container container=getContentPane(); //µÃµ½ÈİÆ÷
-		container.add(panel2,BorderLayout.NORTH); //Ôö¼Ó×é¼şµ½ÈİÆ÷
+		Container container=getContentPane();
+		container.add(panel2,BorderLayout.NORTH);
 		container.add(jsp,BorderLayout.CENTER);
 		container.add(panel,BorderLayout.SOUTH);
-		jsp.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));  //ÉèÖÃ±ß½ç
+		jsp.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
 
-		jbAdd.addActionListener(new ActionListener(){	//Ôö¼ÓÎÄ¼ş°´Å¥ÊÂ¼ş´¦Àí
+		jbAdd.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent event) {
-				if (fileChooser.showOpenDialog(ZipDemoForCrossProcedure.this)==JFileChooser.APPROVE_OPTION){	//µ¯³öÎÄ¼şÑ¡ÔñÆ÷,²¢ÅĞ¶ÏÊÇ·ñµã»÷ÁË´ò¿ª°´Å¥
-					String fileName=fileChooser.getSelectedFile().getAbsolutePath();	//µÃµ½Ñ¡ÔñÎÄ¼şµÄ¾ø¶ÔÂ·¾¶
-					files.add(fileName);  //Ôö¼ÓÎÄ¼şµ½Vector
-					fileList.setListData(files.toArray()); //ÉèÖÃÎÄ¼şÑ¡ÔñÁĞ±íµÄÊı¾İ
+				if (fileChooser.showOpenDialog(ZipDemoForCrossProcedure.this)==JFileChooser.APPROVE_OPTION){
+					String fileName=fileChooser.getSelectedFile().getAbsolutePath();
+					files.add(fileName);
+					fileList.setListData(files.toArray());
       		}
 			}
 		});
@@ -54,53 +54,53 @@ public class ZipDemoForCrossProcedure extends JFrame{
 		ArrayList sources = files;
 		String targetText = target.getText();
 		try{
-			FileOutputStream fout=new FileOutputStream(targetText);	//µÃµ½Ä¿±êÎÄ¼şÊä³öÁ÷
-			ZipOutputStream zout=new ZipOutputStream(fout);	//µÃµ½Ñ¹ËõÊä³öÁ÷
-			byte[] buf=new byte[1024];//Éè¶¨¶ÁÈë»º³åÇø³ß´ç
+			FileOutputStream fout=new FileOutputStream(targetText);
+			ZipOutputStream zout=new ZipOutputStream(fout);
+			byte[] buf=new byte[1024];
 			int num;
 			FileInputStream fin=null;
 			ZipEntry entry=null;
 			for (int i=0;i<sources.size();i++){
-				String filename=sources.get(i).toString(); //µÃµ½´ıÑ¹ËõÎÄ¼şÂ·¾¶Ãû
-				String entryname=filename.substring(filename.lastIndexOf("\\")+1); //µÃµ½ÎÄ¼şÃû
-				entry=new ZipEntry(entryname); //ÊµÀı»¯ÌõÄ¿ÁĞ±í
-				zout.putNextEntry(entry); //½«ZIPÌõÄ¿ÁĞ±íĞ´ÈëÊä³öÁ÷
-				fin=new FileInputStream(filename); //´ÓÔ´ÎÄ¼şµÃµ½ÎÄ¼şÊäÈëÁ÷
-				while ((num=fin.read(buf))!=-1){  //Èç¹ûÎÄ¼şÎ´¶ÁÍê
-					zout.write(buf,0,num);	//Ğ´Èë»º³åÊı¾İ
+				String filename=sources.get(i).toString();
+				String entryname=filename.substring(filename.lastIndexOf("\\")+1);
+				entry=new ZipEntry(entryname);
+				zout.putNextEntry(entry);
+				fin=new FileInputStream(filename);
+				while ((num=fin.read(buf))!=-1){
+					zout.write(buf,0,num);
 				}
 			}
-			zout.close();	//¹Ø±ÕÑ¹ËõÊä³öÁ÷
-			fout.close();	//¹Ø±ÕÎÄ¼şÊä³öÁ÷
-			fin.close();	//¹Ø±ÕÎÄ¼şÊäÈëÁ÷
-			showMessage("Ñ¹Ëõ³É¹¦");	//ÏÔÊ¾²Ù×÷ĞÅÏ¢
+			zout.close();
+			fout.close();
+			fin.close();
+			showMessage("asas");
 		}
 		catch (Exception ex){
-			ex.printStackTrace();	//´òÓ¡³ö´íĞÅÏ¢
-			showMessage("Ñ¹ËõÊ§°Ü");
+			ex.printStackTrace();
+			showMessage("sds");
 		}
 
-		files.remove(fileList.getSelectedValue());	//´ÓVectorÖĞÒÆ³ıÑ¡ÔñÎÄ¼ş
-		fileList.setListData(files.toArray()); //ÉèÖÃÎÄ¼şÑ¡ÔñÁĞ±íµÄÊı¾İ
+		files.remove(fileList.getSelectedValue());
+		fileList.setListData(files.toArray());
 
-		setSize(330,250);	//ÉèÖÃ´°¿Ú³ß´ç
-		setVisible(true);	//ÉèÖÃ´°¿Ú¿ÉÊÓ
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);	//¹Ø±Õ´°¿ÚÊ±ÍË³ö³ÌĞò
+		setSize(330,250);
+		setVisible(true);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		int ff = ZipFUtil.F(10);
 		System.out.println(ff);
 	}
 	
-//	class SelectFileListener implements ActionListener {	//ÎÄ¼şÑ¡ÔñµÄÊÂ¼ş´¦Àí
+//	class SelectFileListener implements ActionListener {
 //		public void actionPerformed(ActionEvent event) {
-//			if (fileChooser.showOpenDialog(ZipDemo.this)==JFileChooser.APPROVE_OPTION){	//µ¯³öÎÄ¼şÑ¡ÔñÆ÷,²¢ÅĞ¶ÏÊÇ·ñµã»÷ÁË´ò¿ª°´Å¥
-//				String fileName=fileChooser.getSelectedFile().getAbsolutePath();	//µÃµ½Ñ¡ÔñÎÄ¼şµÄ¾ø¶ÔÂ·¾¶
+//			if (fileChooser.showOpenDialog(ZipDemo.this)==JFileChooser.APPROVE_OPTION){
+//				String fileName=fileChooser.getSelectedFile().getAbsolutePath();
 //      	}
 //		}
 //	}
 
 	private void showMessage(String message){
-		JOptionPane.showMessageDialog(ZipDemoForCrossProcedure.this,message); //ÏÔÊ¾ĞÅÏ¢
+		JOptionPane.showMessageDialog(ZipDemoForCrossProcedure.this,message); //ï¿½ï¿½Ê¾ï¿½ï¿½Ï¢
 	}
 
 	public static void main(String[] args){
