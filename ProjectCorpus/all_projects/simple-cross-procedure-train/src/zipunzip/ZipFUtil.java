@@ -1,10 +1,5 @@
 package zipunzip;
 
-import graph.mul.gen.H123;
-import graph.mul.gen.ZipFUtil;
-import main.ABC;
-import main.MetaOfApp;
-
 public class ZipFUtil {
 	
 	public static int F(int n) {
@@ -39,4 +34,31 @@ class ZZip extends ZipFUtil implements ABC {
 		System.out.println("HaHa1!");
 	}
 	
+}
+
+interface A {
+	public void yyx_invoke();
+}
+
+class B implements A {
+	@Override
+	public void yyx_invoke() {
+		System.out.println("B");
+	}
+}
+
+class C implements Runnable {
+	@Override
+	public void run() {
+		System.out.println("B");
+	}
+}
+
+class D {
+	void test() {
+		Runnable r = new C();
+		r.run();
+		A a = new B();
+		a.yyx_invoke();
+	}
 }
