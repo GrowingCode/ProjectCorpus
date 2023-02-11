@@ -1,5 +1,8 @@
 package zipunzip;
 
+import main.ABC;
+import main.MetaOfApp;
+
 public class ZipFUtil {
 	
 	public static int F(int n) {
@@ -14,3 +17,15 @@ public class ZipFUtil {
 	
 }
 
+interface ABC {
+	public void Ha();
+}
+
+class ZZip extends ZipFUtil implements ABC {
+
+	@Override
+	public void Ha() {
+		System.out.println("HaHa!");
+	}
+	
+}

@@ -14,3 +14,17 @@ public class ZipFUtil {
 	
 }
 
+interface ABC {
+	public void Ha();
+}
+
+class ZZip extends ZipFUtil implements ABC {
+
+	@Override
+	public void Ha() {
+		System.out.println("HaHa!");
+	}
+	
+}
+
+
