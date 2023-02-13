@@ -26,8 +26,7 @@ public class ZipDemoForParGraphVars extends JFrame{
 		jbZip=new JButton("4554");
 		target=new JTextField(18);
 		JPanel panel=new JPanel();
-		panel.add(jbAdd);
-		panel.add(jbDelete);
+		SetPanel(panel);
 		panel.add(jbZip);
 		JPanel panel2=new JPanel();
 		panel2.add(new JLabel("4554"));
@@ -67,7 +66,12 @@ public class ZipDemoForParGraphVars extends JFrame{
 		setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
-
+	
+	private void SetPanel(JPanel panel) {
+		panel.add(jbAdd);
+		panel.add(jbDelete);
+	}
+	
 	public void zipFiles(Object[] sources,String target){
 		try{
 			FileOutputStream fout=new FileOutputStream(target);
