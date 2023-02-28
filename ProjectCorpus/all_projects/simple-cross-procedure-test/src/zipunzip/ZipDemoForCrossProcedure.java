@@ -7,8 +7,6 @@ import java.util.*;
 import java.util.zip.*;
 import javax.swing.*;
 
-//��ZIPѹ������ļ�
-
 public class ZipDemoForCrossProcedure extends JFrame{
 	JFileChooser fileChooser;
 	JList fileList;
