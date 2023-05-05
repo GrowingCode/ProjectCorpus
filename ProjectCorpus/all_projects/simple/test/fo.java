@@ -38,6 +38,8 @@ public class fo extends JFrame {
 	private JTable table;
 	private JTextField newFileField;
 	
+	char[][] pp = new char[2][3];
+	
 	static {
 		System.err.println("static run. ");
 	}
