@@ -56,6 +56,9 @@ public class fo extends JFrame {
 	public boolean isString(String sPara) {
 		SecretKeyEntry i = null;
 		int iPLength = sPara.length();
+		int a = 0;
+		a++;
+		System.out.println(a++);
 		for (int i = 0; i < iPLength; i++) {
 			char cTemp = sPara.charAt(i);
 			boolean bTemp = false;
@@ -68,6 +71,8 @@ public class fo extends JFrame {
 			if (!bTemp)
 				return false;
 		}
+		a++;
+		System.out.println(a++);
 		return true;
 	}
 
