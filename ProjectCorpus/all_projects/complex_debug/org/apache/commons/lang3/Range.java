@@ -81,3 +81,20 @@ public final class Range<T> implements Serializable {
     }
     
 }
+
+enum ee {
+	A(1) {@SuppressWarnings("unused") public void test() {}}, B(2), C(3);
+	
+	private int v;
+	
+	ee(int v) {
+		this.v = v;
+	}
+	
+	@Override
+	public String toString() {
+		return "" + v;
+	}
+}
+
+
