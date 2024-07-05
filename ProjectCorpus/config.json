@@ -1,7 +1,7 @@
 {
 	// used by EnvSetUp.java
     "witness" : ["very-simple"],
-    "data" : ["simple-cross-procedure-train"],
+    "data" : ["log4j-trunk"],
     "test" : ["simple-cross-procedure-test"],
     // used by PreProcessRawProject.java
     "preprocess" : ["x.zip"]
